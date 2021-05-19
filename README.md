@@ -1,5 +1,5 @@
 # AstroApe Praktikum
-In diesem Projekt möchten wir ein Spiel entwickeln. In dem Spiel gibt es einen Affen, der vor Außerirdischen wegrennt, welche sich als Zoowärter ausgeben.
+In diesem Projekt möchten wir ein Spiel entwickeln. In dem Spiel gibt es einen Affen, der vor Außerirdischen wegrennt, welche sich als Jäger ausgeben.
 
 ## Game Engine
 * Godot
