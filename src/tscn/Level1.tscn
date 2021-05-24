@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://DoganGuendogdu-AstroApe-2a6e35b342d1bedd0d504b05b330570860de2006/tscn/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://DoganGuendogdu-AstroApe-2a6e35b342d1bedd0d504b05b330570860de2006/tscn/LevelComplete1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://AstroApe/src/tscn/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://AstroApe/src/tscn/LevelComplete1.tscn" type="PackedScene" id=2]
 
 [node name="Level1" type="Node"]
 

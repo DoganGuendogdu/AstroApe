@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://DoganGuendogdu-AstroApe-2a6e35b342d1bedd0d504b05b330570860de2006/src/scripts/LevelComplete1.gd" type="Script" id=2]
+[ext_resource path="res://AstroApe/src/sprites/icon.png" type="Texture" id=1]
+[ext_resource path="res://AstroApe/src/scripts/LevelComplete1.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.2485, 33.3972 )
