@@ -5,9 +5,12 @@ const GRAVITY 		= 20
 const ACCELARATION 	= 300
 const MAX_SPEED 	= 200
 const JUMP_HEIGHT 	= -500
+const BANANA_SCENE  = preload("res://AstroApe/src/tscn/Banana.tscn") 
 
 
 var motion = Vector2()
+onready var timer = get_node("Timer")
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -60,13 +63,31 @@ func _physics_process(delta: float) -> void:
 		# In der Luft Reibung bei 5 Prozent
 		if friction == true: 
 			motion.x = lerp(motion.x, 0, 0.05)
-		
-		
+	
 	# Setze Bewegung bei Collision auf 0,0
 	motion = move_and_slide(motion, UP)
 	
 	
+	# Bei Space/Enter schiesse Banane
+	if Input.is_action_pressed("ui_accept"):
+		#if !timer.is_active():
+		if timer.is_stopped():
+			create_banana()
+			timer.start()
+		
+		
+	
 
+# Erstelle Banane
+func create_banana():
+	# Instanziere die Bananen-Szene
+	var banana = BANANA_SCENE.instance()
+		 
+	# Fuege die Szene dem Elternknoten hinzu
+	get_parent().add_child(banana)
+	
+	# Setzte Position der Banane auf den Position2D	 
+	banana.position = get_node("Position2D").global_position
 	
 	
 	
