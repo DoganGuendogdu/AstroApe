@@ -3,10 +3,11 @@ extends KinematicBody2D
 const UP = Vector2(0,-10)
 const GRAVITY 		= 20 
 const ACCELARATION 	= 300
-const MAX_SPEED 	= 200
+const MAX_SPEED 	= 150
 const JUMP_HEIGHT 	= -500
 const BANANA_SCENE  = preload("res://AstroApe/src/tscn/Banana.tscn") 
 
+var direction=1
 
 var motion = Vector2()
 onready var timer = get_node("Timer")
@@ -26,11 +27,24 @@ func _physics_process(delta: float) -> void:
 		# Wenn Motion groesser als das Max_Speed ist, 
 		# so setze Motion auf Max_speed fest
 		motion.x = min(motion.x + ACCELARATION, MAX_SPEED)
+		
+		#direction=1 Richtung = rechts
+		direction=1
+		
+		#passe Position2D der Richtung an (rechts)
+		$Position2D.position.x *=direction
 		$Sprite.flip_h = false
 		$Sprite.play("run")
 	
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = max(motion.x - ACCELARATION, -MAX_SPEED)
+		
+		#direction=-1 Richtung = links
+		direction=-1
+		
+		#passe Position2D der Richtung an (links)
+		$Position2D.position.x *=direction
+		
 		$Sprite.flip_h = true
 		$Sprite.play("run")
 	
@@ -70,7 +84,6 @@ func _physics_process(delta: float) -> void:
 	
 	# Bei Space/Enter schiesse Banane
 	if Input.is_action_pressed("ui_accept"):
-		#if !timer.is_active():
 		if timer.is_stopped():
 			create_banana()
 			timer.start()
@@ -82,12 +95,21 @@ func _physics_process(delta: float) -> void:
 func create_banana():
 	# Instanziere die Bananen-Szene
 	var banana = BANANA_SCENE.instance()
-		 
+	
+	#setze die Richtung der Banane	 
+	banana.banana_direction_x=direction
+	
 	# Fuege die Szene dem Elternknoten hinzu
 	get_parent().add_child(banana)
+	#owner.add_child(banana)
 	
-	# Setzte Position der Banane auf den Position2D	 
+	#Position der Banane wird an der aktuellen Position2D angepasst
+	#banana.transform = $Position2D.global_transform
+	
+	# Setzte Position der Banane auf den Position2D
 	banana.position = get_node("Position2D").global_position
+		
+	
 	
 	
 	
