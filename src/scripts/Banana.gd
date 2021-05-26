@@ -17,6 +17,7 @@ func _process(delta):
 	
 	# Setze Position der Banane
 	position = position + motion * delta
+	rotate(banana_direction_x*0.1)
 	
 
 # Loesche Banane und Gegner wenn getroffen 
