@@ -65,6 +65,8 @@ func _physics_process(delta: float) -> void:
 		if friction == true: 
 			motion.x = lerp(motion.x, 0, 0.2)
 					
+		#Affenbewegung passt sich dem Boden an
+		rotation=get_floor_normal().angle() + PI/2
 	# Wenn Figur in der Luft
 	else:
 		# nach oben springend

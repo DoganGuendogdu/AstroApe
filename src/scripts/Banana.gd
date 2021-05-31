@@ -17,6 +17,7 @@ func _process(delta):
 	
 	# Setze Position der Banane
 	position = position + motion * delta
+	#Banane dreht sich in banana_direction mit der Geschwindigkeit 0.1
 	rotate(banana_direction_x*0.1)
 	
 
