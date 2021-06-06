@@ -6,6 +6,15 @@ const ACCELARATION 	= 200
 const MAX_SPEED 	= 50
 const JUMP_HEIGHT 	= -500
 
+
+const HUNTING = "hunting"
+const PATROLING = "patroling"
+const LEFT =-1
+const RIGHT =1
+
+var direction = LEFT
+
+var state = PATROLING
 var player = null
 var motion = Vector2()
 var playerpos = null
@@ -17,51 +26,67 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	
 	move_character()
+	#move_test()
 	detect_obstacle()
-	
+
 func move_character():
 	motion.y += GRAVITY
-	#laufe nach links
-	motion.x = max(motion.x - ACCELARATION, -MAX_SPEED)
-	#wenn Gegner Spieler bemerkt hat
-	if player != null:
-		#hole Spielerposition
-		playerpos = position.direction_to(player.position)
-		
-		#motion.x = max(playerpos.x +ACCELARATION ,-MAX_SPEED)
-		#motion.x = playerpos.x*MAX_SPEED
-		
-		#bewegung in Richtung Spieler
-		motion.x = max(position.direction_to(player.position).normalized().x*MAX_SPEED,-MAX_SPEED)
-		#drehe nach rechts
-		if motion.x <=0:
-			#scale.x = 1
-			$Sprite.flip_h = false
-			$RayCast2D.enabled = true
-			$RayCast2D2.enabled = false
-		#drehe nach links
-		elif motion.x >0:
-			#scale.x = -1
-			$Sprite.flip_h = true
-			$RayCast2D.enabled = false
-			$RayCast2D2.enabled = true
-	else:
-		motion.x = max(motion.x - ACCELARATION, -MAX_SPEED)
+	if state == HUNTING:
+		#print("hunt")
+		hunt_player()
+	if state == PATROLING:
+		#print("patrol")
+		patrol()
 	motion = move_and_slide(motion, UP)
-	#motion = move_and_collide(motion)
-
+	
+func hunt_player():
+	if position.direction_to(player.position).x <=0 and direction == RIGHT:
+		print("change direction to left")
+		direction = LEFT
+	if position.direction_to(player.position).x >0 and direction == LEFT:
+		print("change direction to right")
+		direction = RIGHT
+	if direction == LEFT:
+		$Node2D.scale = Vector2(1,1)
+		#scale = Vector2(1,1)
+		#scale.x *=-scale.x
+	if direction == RIGHT:
+		$Node2D.scale = Vector2(-1,1)
+		#scale = Vector2(-direction,1)
+		#scale.x *=-scale.x
+	move()
+	
+func patrol():
+	move()
+		
+func move():
+	var speed = motion.x + ACCELARATION
+	if direction ==LEFT:
+		motion.x = max(speed*direction, MAX_SPEED*direction)
+	if direction == RIGHT:
+		motion.x = min(speed*direction, MAX_SPEED*direction)
+	
+	
 #pruefe ob sich vor dem Spieler ein Hindernis befindet, falls ja: springen
 func detect_obstacle():
-	if $RayCast2D.is_colliding():
-		if is_on_floor():
-			motion.y = JUMP_HEIGHT
-	if $RayCast2D2.is_colliding():
-		if is_on_floor():
-			motion.y = JUMP_HEIGHT
+	if state == PATROLING:
+		if get_node("Node2D/RayCast2D").is_colliding():
+		#if $RayCast2D.is_colliding():
+			if is_on_floor():
+				#motion.y = JUMP_HEIGHT
+				direction *=-1
+				scale.x *=-1
+	if state == HUNTING:
+		if get_node("Node2D/RayCast2D").is_colliding():
+		#if $RayCast2D.is_colliding():
+			if is_on_floor():
+			#scale.x =1
+				motion.y = JUMP_HEIGHT
 
 #Jaeger entdeckt Spieler
 func _on_Area2D_body_entered(body):
-	if body != self:
+	#if body != self:
+	if body.get_name() == "Player":
 		player = body
+		state = HUNTING
