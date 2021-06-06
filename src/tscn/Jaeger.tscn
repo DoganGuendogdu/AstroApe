@@ -7,7 +7,7 @@
 extents = Vector2( 5.37099, 11.9592 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 109.38
+radius = 106.5
 
 [node name="Jaeger" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -27,7 +27,17 @@ enabled = true
 collide_with_areas = true
 
 [node name="Area2D" type="Area2D" parent="Node2D"]
+collision_layer = 2147483648
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+visible = false
 shape = SubResource( 2 )
+disabled = true
+
+[node name="ViewArea" type="CollisionPolygon2D" parent="Node2D/Area2D"]
+position = Vector2( 7.62939e-06, -0.140308 )
+polygon = PoolVector2Array( -54.3827, -42.179, -72.0803, -17.6383, -72.0803, 28.1397, -40.6965, 43.4776, -4.04144, 43.229, -4.35736, -43.1229 )
+
+[node name="ViewAttackArea" type="CollisionPolygon2D" parent="Node2D/Area2D"]
+polygon = PoolVector2Array( -5.58482, -3.07258, -19.7559, -3.21288, -19.6156, 12.0807, -5.53125, 11.9063 )
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]

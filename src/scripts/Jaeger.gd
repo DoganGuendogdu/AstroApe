@@ -44,15 +44,17 @@ func hunt_player():
 	if position.direction_to(player.position).x <=0 and direction == RIGHT:
 		print("change direction to left")
 		direction = LEFT
+		$Node2D.scale = Vector2(1,1)
 	if position.direction_to(player.position).x >0 and direction == LEFT:
 		print("change direction to right")
 		direction = RIGHT
-	if direction == LEFT:
-		$Node2D.scale = Vector2(1,1)
+		$Node2D.scale = Vector2(-1,1)
+	#if direction == LEFT:
+		#$Node2D.scale = Vector2(1,1)
 		#scale = Vector2(1,1)
 		#scale.x *=-scale.x
-	if direction == RIGHT:
-		$Node2D.scale = Vector2(-1,1)
+	#if direction == RIGHT:
+		#$Node2D.scale = Vector2(-1,1)
 		#scale = Vector2(-direction,1)
 		#scale.x *=-scale.x
 	move()
@@ -78,6 +80,7 @@ func detect_obstacle():
 				direction *=-1
 				scale.x *=-1
 	if state == HUNTING:
+		 
 		if get_node("Node2D/RayCast2D").is_colliding():
 		#if $RayCast2D.is_colliding():
 			if is_on_floor():
@@ -90,3 +93,5 @@ func _on_Area2D_body_entered(body):
 	if body.get_name() == "Player":
 		player = body
 		state = HUNTING
+	else:
+		pass
