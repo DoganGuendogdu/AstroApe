@@ -22,12 +22,12 @@ func _process(delta):
 	
 
 # Loesche Banane und Gegner wenn getroffen 
-func _on_Banana_area_entered(area: Area2D) -> void:
-	
-	# Verhindert, dass das Portal geloescht wird	
-	if area.name != "LevelComplete1":
-		queue_free()
-		area.queue_free()
+#func _on_Banana_area_entered(area: Area2D) -> void:
+#	
+#	# Verhindert, dass das Portal geloescht wird	
+#	if area.name != "LevelComplete1":
+#		queue_free()
+#		area.queue_free()
 
 	
 
@@ -36,6 +36,10 @@ func _on_VisibilityNotifier2D_screen_exited() -> void:
 	
 	# Loesche sobald wie möglich
 	queue_free()
-	
-	
-	
+
+#Wenn Jaeger von Banane getroffen, dann Banane und Jaeger loeschen
+func _on_Banana_body_entered(body):
+	if "Jaeger" in body.name:
+		print(body.name+" getroffen")
+		queue_free()
+		body.queue_free()

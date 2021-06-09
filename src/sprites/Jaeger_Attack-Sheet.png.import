@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jaeger2.png-98607dd63bbc1b9ef16625349b76c4b1.stex"
+path="res://.import/Jaeger_Attack-Sheet.png-27597995fe8b8f5d684553883eeb6ce9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AstroApe/src/sprites/Jaeger2.png"
-dest_files=[ "res://.import/Jaeger2.png-98607dd63bbc1b9ef16625349b76c4b1.stex" ]
+source_file="res://AstroApe/src/sprites/Jaeger_Attack-Sheet.png"
+dest_files=[ "res://.import/Jaeger_Attack-Sheet.png-27597995fe8b8f5d684553883eeb6ce9.stex" ]
 
 [params]
 
