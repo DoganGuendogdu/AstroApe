@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="punkte" type="Label" parent="CanvasLayer/TextureRect"]
+margin_left = 277.916
+margin_top = 0.840897
+margin_right = 317.916
+margin_bottom = 14.8409
+__meta__ = {
+"_edit_use_anchors_": false
+}

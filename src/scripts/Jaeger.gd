@@ -55,6 +55,7 @@ func hunt_player():
 		#print("change direction to right")
 		direction = RIGHT
 		$Node2D.scale = Vector2(-1,1)
+	move()
 	#if direction == LEFT:
 		#$Node2D.scale = Vector2(1,1)
 		#scale = Vector2(1,1)
@@ -63,7 +64,7 @@ func hunt_player():
 		#$Node2D.scale = Vector2(-1,1)
 		#scale = Vector2(-direction,1)
 		#scale.x *=-scale.x
-	move()
+	
 	
 #Jaeger soll sich bewegen und bei einem Hindernis umdrehen
 func patrol():
@@ -121,7 +122,8 @@ func end_of_hit():
 
 #Wenn Affe/Spieler getroffen, lande Level neu
 func _on_AttackDetector_body_entered(body):
-	get_tree().reload_current_scene()
+	if body.get_name() == "Player":
+		get_tree().reload_current_scene()
 
 #Wenn Jaeger nah am Affen steht, führe Attack-Animation aus
 func _on_PlayerDetector_body_entered(body):

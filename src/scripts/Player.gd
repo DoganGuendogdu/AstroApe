@@ -84,7 +84,7 @@ func _physics_process(delta: float) -> void:
 	motion = move_and_slide(motion, UP)
 	
 	
-	# Bei Space/Enter schiesse Banane
+	# Bei Space/Enter schieße Banane
 	if Input.is_action_pressed("ui_accept"):
 		if timer.is_stopped():
 			create_banana()
@@ -103,10 +103,6 @@ func create_banana():
 	
 	# Fuege die Szene dem Elternknoten hinzu
 	get_parent().add_child(banana)
-	#owner.add_child(banana)
-	
-	#Position der Banane wird an der aktuellen Position2D angepasst
-	#banana.transform = $Position2D.global_transform
 	
 	# Setzte Position der Banane auf den Position2D
 	banana.position = get_node("Position2D").global_position

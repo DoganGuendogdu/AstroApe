@@ -1,14 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://AstroApe/src/tscn/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://AstroApe/src/tscn/LevelComplete1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://AstroApe/src/sprites/Tiles/JungleTestTiles.tres" type="TileSet" id=3]
 [ext_resource path="res://AstroApe/src/tscn/Jaeger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://AstroApe/src/tscn/Control.tscn" type="PackedScene" id=5]
 
 [node name="Level1" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -88.4251, 68.3658 )
+position = Vector2( -86.9251, 66.3658 )
+
+[node name="Control" parent="Player" instance=ExtResource( 5 )]
+margin_left = -129.575
+margin_top = -99.3658
+margin_right = -129.575
+margin_bottom = -99.3658
 
 [node name="LevelComplete1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 155.739, -82.1171 )
@@ -25,4 +32,4 @@ tile_data = PoolIntArray( -720884, 7, 0, -720883, 7, 0, -655348, 7, 0, -655347, 
 position = Vector2( 179.151, 66.3161 )
 
 [node name="Jaeger2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 129.708, 66.8513 )
+position = Vector2( 163.923, 67.0873 )
