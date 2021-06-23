@@ -1,26 +1,59 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://AstroApe/src/scripts/Score.gd" type="Script" id=1]
+[ext_resource path="res://AstroApe/src/scripts/Highscore.gd" type="Script" id=2]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 0.280609
+margin_top = -0.280624
+margin_right = 0.280609
+margin_bottom = -0.280624
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="hud" type="CanvasLayer" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="ScoreLabel" type="Label" parent="hud"]
+margin_left = 0.471146
+margin_top = 225.922
+margin_right = 40.4711
+margin_bottom = 239.922
+text = "Score:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="punkte" type="Label" parent="CanvasLayer/TextureRect"]
-margin_left = 277.916
-margin_top = 0.840897
-margin_right = 317.916
-margin_bottom = 14.8409
+[node name="Score" type="Label" parent="hud"]
+margin_left = 42.4711
+margin_top = 225.922
+margin_right = 79.4711
+margin_bottom = 239.922
+text = "0"
+align = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Highscore" type="Label" parent="hud"]
+margin_left = 214.281
+margin_top = 227.0
+margin_right = 319.281
+margin_bottom = 241.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoreLabel" type="Label" parent="hud"]
+margin_left = 144.668
+margin_top = 226.482
+margin_right = 212.668
+margin_bottom = 240.482
+text = "Highscore:"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,11 +1,40 @@
 extends Node2D
 
-var score = 0 setget set_score
+var score = 0 
+#setget set_score
 
-var highscore = 0
+var hudScore
+var hudHighScore
 
-signal score_changed
+var highscore = 0 setget set_highscore
+const filepath = "res://highscore.data"
 
-func set_score(value):
-	score = value
-	emit_signal("score_changed", score)
+
+func add_Score(value):
+	if value + score< highscore:
+		score += value
+	else:
+		set_highscore(value+score)
+
+
+func _ready():
+	load_highscore()
+
+func load_highscore():
+	var file = File.new()
+	if not file.file_exists(filepath): return
+	file.open(filepath, File.READ)
+	highscore = file.get_var()
+	file.close()
+
+func save_highscore():
+	var file = File.new()
+	file.open(filepath, File.WRITE)
+	file.store_var(highscore)
+	file.close()
+
+func set_highscore(new_value):
+	highscore = new_value
+	score = new_value
+	Global.hudHighScore.set_text(str(Global.score))
+	save_highscore()

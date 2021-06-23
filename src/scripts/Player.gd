@@ -12,6 +12,10 @@ var direction=1
 var motion = Vector2()
 onready var timer = get_node("Timer")
 
+func _ready():
+	Global.hudScore.set_text(str(Global.score))
+	Global.hudHighScore.set_text(str(Global.highscore))
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

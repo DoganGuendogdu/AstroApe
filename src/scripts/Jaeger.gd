@@ -19,6 +19,8 @@ var player = null
 var motion = Vector2()
 var playerpos = null
 
+var punkte = 10
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#hier kommt noch die walk animation hin!
@@ -123,9 +125,11 @@ func end_of_hit():
 #Wenn Affe/Spieler getroffen, lande Level neu
 func _on_AttackDetector_body_entered(body):
 	if body.get_name() == "Player":
+		#Global.save_highscore()
 		get_tree().reload_current_scene()
 
 #Wenn Jaeger nah am Affen steht, führe Attack-Animation aus
 func _on_PlayerDetector_body_entered(body):
 	if body.get_name() == "Player":
 		$Node2D/AnimationPlayer.play("Attack")
+		punkte = 15

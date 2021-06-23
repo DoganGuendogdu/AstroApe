@@ -41,6 +41,7 @@ func _on_VisibilityNotifier2D_screen_exited() -> void:
 func _on_Banana_body_entered(body):
 	if "Jaeger" in body.name:
 		print(body.name+" getroffen")
-		Global.score += 10
+		Global.add_Score(body.punkte)
+		Global.hudScore.set_text(str(Global.score))
 		queue_free()
 		body.queue_free()

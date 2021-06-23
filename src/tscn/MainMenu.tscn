@@ -4,14 +4,13 @@
 [ext_resource path="res://AstroApe/src/sprites/Menu2-Sheet.png" type="Texture" id=2]
 [ext_resource path="res://AstroApe/src/sprites/Retro Gaming.ttf" type="DynamicFontData" id=3]
 
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 3 )
-
-[sub_resource type="Animation" id=1]
-resource_name = "Start"
+[sub_resource type="Animation" id=3]
 length = 1.8
 step = 0.08
 tracks/0/type = "value"
@@ -51,14 +50,14 @@ margin_right = 191.0
 margin_bottom = 147.0
 
 [node name="Titel" type="Sprite" parent="CenterContainer/VBoxContainer"]
-position = Vector2( 18.9201, 19.3406 )
+position = Vector2( 32.3745, 4.62489 )
 texture = ExtResource( 2 )
 hframes = 19
 
 [node name="Start_game" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_right = 65.0
 margin_bottom = 27.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.862745, 0.768627, 0.0980392, 1 )
 text = "Start"
 
@@ -66,11 +65,11 @@ text = "Start"
 margin_top = 31.0
 margin_right = 65.0
 margin_bottom = 58.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.862745, 0.768627, 0.0980392, 1 )
 text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainer/VBoxContainer"]
-anims/Start = SubResource( 1 )
+anims/Start = SubResource( 3 )
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Start_game" to="." method="_on_Start_game_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit_game" to="." method="_on_Quit_game_pressed"]
