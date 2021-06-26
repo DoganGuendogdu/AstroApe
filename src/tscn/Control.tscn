@@ -4,11 +4,7 @@
 [ext_resource path="res://AstroApe/src/scripts/Highscore.gd" type="Script" id=2]
 [ext_resource path="res://AstroApe/src/sprites/Retro Gaming.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=3]
-size = 11
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 11
 font_data = ExtResource( 3 )
 
@@ -16,7 +12,11 @@ font_data = ExtResource( 3 )
 size = 11
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
+size = 11
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 11
 font_data = ExtResource( 3 )
 
@@ -33,34 +33,33 @@ __meta__ = {
 
 [node name="hud" type="CanvasLayer" parent="."]
 
-[node name="ScoreLabel" type="Label" parent="hud"]
-margin_top = 226.0
-margin_right = 48.0
-margin_bottom = 240.0
-custom_fonts/font = SubResource( 3 )
-text = "Score:"
+[node name="ColorRect" type="ColorRect" parent="hud"]
+margin_left = 0.0432434
+margin_top = 225.362
+margin_right = 320.043
+margin_bottom = 240.362
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoreLabel" type="Label" parent="hud/ColorRect"]
+margin_left = 144.073
+margin_top = -0.061615
+margin_right = 223.073
+margin_bottom = 13.9384
+custom_fonts/font = SubResource( 2 )
+text = "Highscore:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Score" type="Label" parent="hud"]
-margin_left = 48.0
-margin_top = 226.0
-margin_right = 111.0
-margin_bottom = 240.0
-custom_fonts/font = SubResource( 4 )
-text = "0"
-align = 1
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Highscore" type="Label" parent="hud"]
+[node name="Highscore" type="Label" parent="hud/ColorRect"]
 margin_left = 224.0
-margin_top = 227.0
+margin_top = 0.159088
 margin_right = 319.0
-margin_bottom = 241.0
+margin_bottom = 14.1591
 custom_fonts/font = SubResource( 1 )
 align = 1
 script = ExtResource( 2 )
@@ -68,20 +67,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HighscoreLabel" type="Label" parent="hud"]
-margin_left = 144.668
-margin_top = 226.482
-margin_right = 212.668
-margin_bottom = 240.482
-custom_fonts/font = SubResource( 2 )
-text = "Highscore:"
+[node name="ScoreLabel" type="Label" parent="hud/ColorRect"]
+margin_left = 0.594589
+margin_top = 0.0509644
+margin_right = 48.5946
+margin_bottom = 14.051
+custom_fonts/font = SubResource( 3 )
+text = "Score:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="hud"]
-margin_right = 320.0
-margin_bottom = 15.0
+[node name="Score" type="Label" parent="hud/ColorRect"]
+margin_left = 48.5946
+margin_top = 0.0509644
+margin_right = 111.595
+margin_bottom = 14.051
+custom_fonts/font = SubResource( 4 )
+text = "0"
+align = 1
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
