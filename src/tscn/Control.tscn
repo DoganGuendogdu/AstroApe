@@ -1,7 +1,24 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://AstroApe/src/scripts/Score.gd" type="Script" id=1]
 [ext_resource path="res://AstroApe/src/scripts/Highscore.gd" type="Script" id=2]
+[ext_resource path="res://AstroApe/src/sprites/Retro Gaming.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=3]
+size = 11
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 11
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 11
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 11
+font_data = ExtResource( 3 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -17,32 +34,35 @@ __meta__ = {
 [node name="hud" type="CanvasLayer" parent="."]
 
 [node name="ScoreLabel" type="Label" parent="hud"]
-margin_left = 0.471146
-margin_top = 225.922
-margin_right = 40.4711
-margin_bottom = 239.922
+margin_top = 226.0
+margin_right = 48.0
+margin_bottom = 240.0
+custom_fonts/font = SubResource( 3 )
 text = "Score:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Score" type="Label" parent="hud"]
-margin_left = 42.4711
-margin_top = 225.922
-margin_right = 79.4711
-margin_bottom = 239.922
+margin_left = 48.0
+margin_top = 226.0
+margin_right = 111.0
+margin_bottom = 240.0
+custom_fonts/font = SubResource( 4 )
 text = "0"
-align = 2
+align = 1
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Highscore" type="Label" parent="hud"]
-margin_left = 214.281
+margin_left = 224.0
 margin_top = 227.0
-margin_right = 319.281
+margin_right = 319.0
 margin_bottom = 241.0
+custom_fonts/font = SubResource( 1 )
+align = 1
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,7 +73,15 @@ margin_left = 144.668
 margin_top = 226.482
 margin_right = 212.668
 margin_bottom = 240.482
+custom_fonts/font = SubResource( 2 )
 text = "Highscore:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="hud"]
+margin_right = 320.0
+margin_bottom = 15.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
