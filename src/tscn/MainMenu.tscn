@@ -71,5 +71,6 @@ text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainer/VBoxContainer"]
 anims/Start = SubResource( 3 )
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Start_game" to="." method="_on_Start_game_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit_game" to="." method="_on_Quit_game_pressed"]

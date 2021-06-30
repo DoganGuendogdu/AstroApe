@@ -63,5 +63,6 @@ text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="Pause/btn_resume" to="Pause" method="_on_btn_resume_pressed"]
 [connection signal="pressed" from="Pause/btn_Quit" to="Pause" method="_on_btn_Quit_pressed"]

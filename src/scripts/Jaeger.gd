@@ -87,7 +87,9 @@ func detect_obstacle():
 	#Patroling State
 	if state == PATROLING:
 		
-		if get_node("Node2D/RayCast2D").is_colliding():
+		if ray.is_colliding():
+		
+			print(ray.get_collider())
 		#if $RayCast2D.is_colliding():
 			if is_on_floor():
 				#motion.y = JUMP_HEIGHT
