@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Wand.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Spieler.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Alien.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Bilder/Hintergrund.jpg" type="Texture" id=4]
+[ext_resource path="res://Endboss.tscn" type="PackedScene" id=5]
+
+[node name="Welt" type="Node2D"]
+
+[node name="Alien8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 149.157, -156.535 )
+rotation = 3.14159
+
+[node name="Alien17" parent="." instance=ExtResource( 3 )]
+position = Vector2( 234.639, -100.844 )
+rotation = 3.14159
+
+[node name="Alien7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 61.384, -156.671 )
+rotation = 3.14159
+
+[node name="Alien10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 55.1824, -83.4434 )
+rotation = 3.14159
+
+[node name="Alien18" parent="." instance=ExtResource( 3 )]
+position = Vector2( 105.692, -122.829 )
+rotation = 3.14159
+
+[node name="Alien19" parent="." instance=ExtResource( 3 )]
+position = Vector2( 166.334, -104.951 )
+rotation = 3.14159
+
+[node name="Alien20" parent="." instance=ExtResource( 3 )]
+position = Vector2( 205.543, -208.891 )
+rotation = 3.14159
+
+[node name="Alien11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 117.009, -79.0203 )
+rotation = 3.14159
+
+[node name="Alien16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 200.87, -150.879 )
+rotation = 3.14159
+
+[node name="Alien12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 264.87, -135.667 )
+rotation = 3.14159
+
+[node name="Alien15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 123.158, -214.324 )
+rotation = 3.14159
+
+[node name="Alien13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 188.119, -64.9437 )
+rotation = 3.14159
+
+[node name="Alien14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 271.313, -73.8824 )
+rotation = 3.14159
+
+[node name="Alien2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 30.019, -25.6283 )
+rotation = 3.14159
+
+[node name="Alien" parent="." instance=ExtResource( 3 )]
+position = Vector2( 298.622, -37.1148 )
+rotation = 3.14159
+
+[node name="Wand" parent="." instance=ExtResource( 1 )]
+position = Vector2( -10.0762, 231 )
+
+[node name="Wand2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 330.652, 230.185 )
+
+[node name="Spieler" parent="." instance=ExtResource( 2 )]
+position = Vector2( 163.449, 215.466 )
+
+[node name="Alien6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 31.5649, -124.354 )
+rotation = 3.14159
+
+[node name="Alien3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 162.474, -36.4008 )
+rotation = 3.14159
+
+[node name="Alien9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 197.611, -11.0827 )
+rotation = 3.14159
+
+[node name="Alien4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 93.1555, -32.3555 )
+rotation = 3.14159
+
+[node name="Alien5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 237.292, -33.0373 )
+rotation = 3.14159
+
+[node name="Endboss" parent="." instance=ExtResource( 5 )]
+position = Vector2( 161.272, -258.039 )
+rotation = 3.14159
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 159.909, 151.515 )
+scale = Vector2( 0.439427, 0.764394 )
+texture = ExtResource( 4 )
