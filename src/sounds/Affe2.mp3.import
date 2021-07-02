@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Affe2.mp3-aa2495f8a5e5bbeddad1f3fe1f045107.mp3str"
+
+[deps]
+
+source_file="res://Sound/Affe2.mp3"
+dest_files=[ "res://.import/Affe2.mp3-aa2495f8a5e5bbeddad1f3fe1f045107.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
