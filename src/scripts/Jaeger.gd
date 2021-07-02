@@ -93,8 +93,15 @@ func detect_obstacle():
 		#if $RayCast2D.is_colliding():
 			if is_on_floor():
 				#motion.y = JUMP_HEIGHT
-				direction *=-1
-				scale.x *=-1
+				#direction *=-1
+
+				if direction == RIGHT:
+					$Node2D.scale = Vector2(-1,1)
+					direction = LEFT
+				elif direction == LEFT:
+					$Node2D.scale = Vector2(1,1)
+					direction = RIGHT
+				#scale.x *=-1
 	#Hunting State
 	if state == HUNTING:
 		#wenn lasse den Jaeger bei einem Hindernis springen, wenn es sich nicht um den Spieler/Affe handelt
