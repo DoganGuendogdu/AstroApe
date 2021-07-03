@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Alien_spaceShip.png-e7da3b684e9d384b6e6c375b47d6141b.stex"
+path="res://.import/Alien_spaceShip.png-b3d01d11a61bcb8bcf2d0e15c8900776.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Alien_spaceShip.png"
-dest_files=[ "res://.import/Alien_spaceShip.png-e7da3b684e9d384b6e6c375b47d6141b.stex" ]
+source_file="res://AstroApe/src/sprites/Alien_spaceShip.png"
+dest_files=[ "res://.import/Alien_spaceShip.png-b3d01d11a61bcb8bcf2d0e15c8900776.stex" ]
 
 [params]
 

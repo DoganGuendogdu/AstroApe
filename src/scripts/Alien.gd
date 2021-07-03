@@ -23,7 +23,7 @@ func kill():
 
 func shoot():
 	if shootingcount >= 40:
-		var bullet = preload("res://AlienBullet.tscn")
+		var bullet = preload("res://AstroApe/src/tscn/AlienBullet.tscn")
 		var firedbullet = bullet.instance()
 		firedbullet.position = Vector2(position.x,position.y)
 		get_parent().call_deferred("add_child", firedbullet)

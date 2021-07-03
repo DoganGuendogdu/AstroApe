@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-ca15351d47162b0fcb90202662951499.stex"
+path="res://.import/icon.png-2b507f12d74140089d3afad297bbc1ea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bilder/icon.png"
-dest_files=[ "res://.import/icon.png-ca15351d47162b0fcb90202662951499.stex" ]
+source_file="res://AstroApe/src/bilder/icon.png"
+dest_files=[ "res://.import/icon.png-2b507f12d74140089d3afad297bbc1ea.stex" ]
 
 [params]
 

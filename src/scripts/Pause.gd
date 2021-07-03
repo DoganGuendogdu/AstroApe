@@ -16,3 +16,9 @@ func _on_btn_resume_pressed():
 	var new_pause_state = not get_tree().paused
 	get_tree().paused = new_pause_state
 	visible = new_pause_state
+
+
+func _on_btn_Menu_pressed():
+	var new_pause_state = not get_tree().paused
+	get_tree().change_scene("res://AstroApe/src/tscn/MainMenu.tscn")
+	get_tree().paused = new_pause_state

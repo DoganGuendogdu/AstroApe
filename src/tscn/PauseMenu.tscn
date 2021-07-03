@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://AstroApe/src/scripts/Pause.gd" type="Script" id=1]
 [ext_resource path="res://AstroApe/src/sprites/Retro Gaming.ttf" type="DynamicFontData" id=2]
@@ -11,6 +11,9 @@ size = 20
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 2 )
 
 [node name="PauseMenu" type="CanvasLayer"]
@@ -55,13 +58,26 @@ __meta__ = {
 
 [node name="btn_Quit" type="Button" parent="Pause"]
 margin_left = 134.964
-margin_top = 144.634
+margin_top = 170.198
 margin_right = 184.964
-margin_bottom = 171.634
+margin_bottom = 197.198
 custom_fonts/font = SubResource( 3 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="btn_Menu" type="Button" parent="Pause"]
+margin_left = 106.017
+margin_top = 131.696
+margin_right = 215.017
+margin_bottom = 158.696
+custom_fonts/font = SubResource( 4 )
+text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Pause/btn_resume" to="Pause" method="_on_btn_resume_pressed"]
 [connection signal="pressed" from="Pause/btn_Quit" to="Pause" method="_on_btn_Quit_pressed"]
+[connection signal="pressed" from="Pause/btn_Menu" to="Pause" method="_on_btn_Menu_pressed"]

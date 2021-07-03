@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Banane.png-58ecc9b9b57c7a4670b0b3bd06b69ed1.stex"
+path="res://.import/Banane.png-b065fad214de8ac9b8c0dbabe72781e5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Banane.png"
-dest_files=[ "res://.import/Banane.png-58ecc9b9b57c7a4670b0b3bd06b69ed1.stex" ]
+source_file="res://AstroApe/src/sprites/Banane.png"
+dest_files=[ "res://.import/Banane.png-b065fad214de8ac9b8c0dbabe72781e5.stex" ]
 
 [params]
 

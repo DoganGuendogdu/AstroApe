@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://AstroApe/src/scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://AstroApe/src/sprites/Menu2-Sheet.png" type="Texture" id=2]
 [ext_resource path="res://AstroApe/src/sprites/Retro Gaming.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://AstroApe/src/sprites/background/plx-3.png" type="Texture" id=4]
+[ext_resource path="res://AstroApe/src/sprites/background/plx-5.png" type="Texture" id=5]
+[ext_resource path="res://AstroApe/src/sprites/background/plx-4.png" type="Texture" id=6]
+[ext_resource path="res://AstroApe/src/sprites/background/plx-2.png" type="Texture" id=7]
+[ext_resource path="res://AstroApe/src/sprites/background/plx-1.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
@@ -71,5 +76,53 @@ text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainer/VBoxContainer"]
 anims/Start = SubResource( 3 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+motion_mirroring = Vector2( 384, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 1, 1.14 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0 )
+motion_mirroring = Vector2( 384, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2( 1, 1.14 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 0 )
+motion_mirroring = Vector2( 384, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2( 1, 1.14 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 0 )
+motion_mirroring = Vector2( 384, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+scale = Vector2( 1, 1.14 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0 )
+motion_mirroring = Vector2( 384, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+scale = Vector2( 1, 1.14 )
+texture = ExtResource( 5 )
+centered = false
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Start_game" to="." method="_on_Start_game_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit_game" to="." method="_on_Quit_game_pressed"]

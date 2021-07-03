@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ape_Ship.png-0d1089fb9084eb8d18668b4d10f0b9de.stex"
+path="res://.import/plx-1.png-6900aeba581e80d8c9b42a0f9a018178.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AstroApe/src/sprites/Ape_Ship.png"
-dest_files=[ "res://.import/Ape_Ship.png-0d1089fb9084eb8d18668b4d10f0b9de.stex" ]
+source_file="res://AstroApe/src/sprites/background/plx-1.png"
+dest_files=[ "res://.import/plx-1.png-6900aeba581e80d8c9b42a0f9a018178.stex" ]
 
 [params]
 

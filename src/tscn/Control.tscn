@@ -4,11 +4,11 @@
 [ext_resource path="res://AstroApe/src/scripts/Highscore.gd" type="Script" id=2]
 [ext_resource path="res://AstroApe/src/sprites/Retro Gaming.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 11
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 11
 font_data = ExtResource( 3 )
 
@@ -49,7 +49,7 @@ margin_left = 144.073
 margin_top = -0.061615
 margin_right = 223.073
 margin_bottom = 13.9384
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Highscore:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -60,7 +60,7 @@ margin_left = 224.0
 margin_top = 0.159088
 margin_right = 319.0
 margin_bottom = 14.1591
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 align = 1
 script = ExtResource( 2 )
 __meta__ = {

@@ -125,7 +125,7 @@ func end_of_hit():
 #Wenn Affe/Spieler getroffen, lande Level neu
 func _on_AttackDetector_body_entered(body):
 	if body.get_name() == "Player":
-		#Global.save_highscore()
+		Global.reset_Score()
 		get_tree().reload_current_scene()
 
 #Wenn Jaeger nah am Affen steht, führe Attack-Animation aus

@@ -96,6 +96,7 @@ shape = SubResource( 4 )
 
 [node name="ViewAttackArea" type="CollisionPolygon2D" parent="Node2D/PlayerDetector"]
 polygon = PoolVector2Array( -5.58482, -3.07258, -20.5365, -3.28726, -20.6416, 11.954, -5.53125, 11.9063 )
+
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Node2D/AttackDetector" to="." method="_on_AttackDetector_body_entered"]
 [connection signal="body_entered" from="Node2D/PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]

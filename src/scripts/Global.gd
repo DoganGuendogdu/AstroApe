@@ -16,6 +16,9 @@ func add_Score(value):
 	else:
 		set_highscore(value+score)
 
+func reset_Score():
+	score=0
+	
 
 func _ready():
 	load_highscore()

@@ -15,7 +15,7 @@ func _physics_process(delta):
 		fire()
 		
 func fire():
-	var bullet = preload("res://Kugel.tscn")
+	var bullet = preload("res://AstroApe/src/tscn/Kugel.tscn")
 	var firedbullet = bullet.instance()
 	firedbullet.position = Vector2(position.x, 0)
 	$ShotSound.play()

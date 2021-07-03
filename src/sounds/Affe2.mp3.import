@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Affe2.mp3-aa2495f8a5e5bbeddad1f3fe1f045107.mp3str"
+path="res://.import/Affe2.mp3-dfd318ffa4379fcae03b7fb13644f000.mp3str"
 
 [deps]
 
-source_file="res://Sound/Affe2.mp3"
-dest_files=[ "res://.import/Affe2.mp3-aa2495f8a5e5bbeddad1f3fe1f045107.mp3str" ]
+source_file="res://AstroApe/src/sounds/Affe2.mp3"
+dest_files=[ "res://.import/Affe2.mp3-dfd318ffa4379fcae03b7fb13644f000.mp3str" ]
 
 [params]
 

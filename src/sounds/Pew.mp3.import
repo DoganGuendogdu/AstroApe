@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Pew.mp3-ea88fd0492c3c2c7f2f2a9144d6e2375.mp3str"
+path="res://.import/Pew.mp3-b44f9a997a29b0d15374c4cdec65fc97.mp3str"
 
 [deps]
 
-source_file="res://Sound/Pew.mp3"
-dest_files=[ "res://.import/Pew.mp3-ea88fd0492c3c2c7f2f2a9144d6e2375.mp3str" ]
+source_file="res://AstroApe/src/sounds/Pew.mp3"
+dest_files=[ "res://.import/Pew.mp3-b44f9a997a29b0d15374c4cdec65fc97.mp3str" ]
 
 [params]
 

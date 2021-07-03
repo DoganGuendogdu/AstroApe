@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Hintergrund.jpg-a4110496fd4bd03508821ab3c527bf67.stex"
+path="res://.import/Hintergrund.jpg-85471212920e235728f4468a0c166e10.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bilder/Hintergrund.jpg"
-dest_files=[ "res://.import/Hintergrund.jpg-a4110496fd4bd03508821ab3c527bf67.stex" ]
+source_file="res://AstroApe/src/bilder/Hintergrund.jpg"
+dest_files=[ "res://.import/Hintergrund.jpg-85471212920e235728f4468a0c166e10.stex" ]
 
 [params]
 
