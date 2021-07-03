@@ -19,7 +19,7 @@ margin_right = -129.575
 margin_bottom = -99.3658
 
 [node name="LevelComplete1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 155.739, -82.1171 )
+position = Vector2( -147.668, 54.6034 )
 world_scene = "res://AstroApe/src/tscn/Level2.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
