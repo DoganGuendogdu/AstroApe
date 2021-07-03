@@ -3,6 +3,7 @@ extends KinematicBody2D
 var move_speed = 15
 var hits = 2
 var shootingcount = rand_range(10, 70)
+var points = 10
 
 
 func _physics_process(delta):
@@ -17,6 +18,8 @@ func _physics_process(delta):
 func kill():
 	hits -= 1
 	if hits == 0:
+		Global.add_Score(points)
+		Global.hudScore.set_text(str(Global.score))
 		queue_free()
 		
 

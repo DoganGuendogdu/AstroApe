@@ -39,5 +39,5 @@ func save_highscore():
 func set_highscore(new_value):
 	highscore = new_value
 	score = new_value
-	Global.hudHighScore.set_text(str(Global.score))
+	hudHighScore.set_text(str(score))
 	save_highscore()
