@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://AstroApe/src/sprites/AstroApe_Dummy.png" type="Texture" id=1]
 [ext_resource path="res://AstroApe/src/scripts/Player.gd" type="Script" id=2]
-[ext_resource path="res://AstroApe/src/sprites/background.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -13,7 +12,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "run",
+"name": "jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
@@ -32,6 +31,7 @@ radius = 7.9497
 height = 0.0
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( -113.793, 25.3984 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -44,22 +44,16 @@ animation = "fall"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 6.10569, -6.69561 )
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 6.93739, -5.57094 )
-scale = Vector2( 3.20035, 2.47627 )
-texture = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_top = -130
+limit_bottom = 260
+
+[node name="ParallelxScrollingScene" type="Node2D" parent="."]

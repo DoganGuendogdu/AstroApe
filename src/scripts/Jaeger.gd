@@ -95,12 +95,12 @@ func detect_obstacle():
 				#motion.y = JUMP_HEIGHT
 				#direction *=-1
 
-				if direction == RIGHT:
+				if direction == LEFT:
 					$Node2D.scale = Vector2(-1,1)
-					direction = LEFT
-				elif direction == LEFT:
-					$Node2D.scale = Vector2(1,1)
 					direction = RIGHT
+				elif direction == RIGHT:
+					$Node2D.scale = Vector2(1,1)
+					direction = LEFT
 				#scale.x *=-1
 	#Hunting State
 	if state == HUNTING:
