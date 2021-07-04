@@ -8,12 +8,6 @@ var points = 40
 
 func _physics_process(delta):
 	var collision = move_and_collide(Vector2.DOWN * delta * move_speed)
-	"""if test <= 25:
-		var collision2 = move_and_collide(Vector2.LEFT * delta * move_speed)
-		var test = rand_range(0,50)
-	elif test > 25:
-		var collision3 = move_and_collide(Vector2.RIGHT * delta * move_speed)
-		var test = rand_range(0,50)"""
 	shootingcount +=delta
 	if global_position.y >= 0:
 		shoot()	
@@ -26,10 +20,16 @@ func kill():
 		get_tree().reload_current_scene()
 
 func shoot():
-	if shootingcount >= 40:
+	if shootingcount >= 30:
 		var bullet = preload("res://AstroApe/src/tscn/AlienBullet.tscn")
-		var firedbullet = bullet.instance()
-		firedbullet.position = Vector2(position.x,position.y)
-		get_parent().call_deferred("add_child", firedbullet)
+		var firedbullet1 = bullet.instance()
+		var firedbullet3 = bullet.instance()
+		var firedbullet5 = bullet.instance()
+		firedbullet1.position = Vector2(position.x,position.y)
+		firedbullet3.position = Vector2(position.x+70,position.y)
+		firedbullet5.position = Vector2(position.x-70,position.y)
+		get_parent().call_deferred("add_child", firedbullet1)
+		get_parent().call_deferred("add_child", firedbullet3)
+		get_parent().call_deferred("add_child", firedbullet5)
 		
 		shootingcount = rand_range(20, 70)
