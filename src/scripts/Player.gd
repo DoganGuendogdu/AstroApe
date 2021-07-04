@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		direction=1
 		
 		#passe Position2D der Richtung an (rechts)
-		$Position2D.position.x *=direction
+		$Position2D.position.x *=-direction
 		$Sprite.flip_h = false
 		$Sprite.play("run")
 	
@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		direction=-1
 		
 		#passe Position2D der Richtung an (links)
-		$Position2D.position.x *=direction
+		$Position2D.position.x *=-direction
 		
 		$Sprite.flip_h = true
 		$Sprite.play("run")

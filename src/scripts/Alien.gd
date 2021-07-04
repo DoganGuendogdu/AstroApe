@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var move_speed = 15
+var move_speed = 10
 var hits = 2
 var shootingcount = rand_range(10, 70)
 var points = 10

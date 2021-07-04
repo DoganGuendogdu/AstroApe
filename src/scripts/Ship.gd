@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-
-
 var speed = 70
 var Velocity = Vector2()
 
